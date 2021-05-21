@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Vue SFC</title>
+  </head>
+  <body>
+    <section id="vue-component">
+      <h2>Vue Component</h2>
+      <ul>
+        <li v-for="(item, i) in items" :key="i">{{item}}</li>
+      </ul>
+      <button @click="count++">{{count}}</button>
+    </section>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            count: 0,
+            items: ['one', 'two', 'three'],
+          };
+        },
+        methods: {
+          addGoal() {
+            this.goals.push(this.enteredValue);
+          },
+        },
+      }).mount('#vue-component');
+    </script>
+  </body>
+</html>

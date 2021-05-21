@@ -8,39 +8,35 @@
     <meta name="description" content="Web site created with Vue and React" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!--  -->
     <title>React or Vue?</title>
-    <style>
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"
+    />
+    <script>
+      $(function () {
+        $('#vuetemplate').load('vue-sfc.html');
+      });
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <div id="app">
+    <div id="react-root"></div>
+    <div id="vue-root">
+      <div id="vuetemplate"></div>
       <h2>Vue App</h2>
       <ul>
-        <li v-for="item in items" key="item">{{item}}</li>
+        <li v-for="(item, i) in items" :key="i">{{item}}</li>
       </ul>
       <button @click="count++">{{count}}</button>
     </div>
-
     <script src="https://unpkg.com/vue@next"></script>
-    <script>
-      Vue.createApp({
-        data() {
-          return {
-            count: 0,
-            items: ['one', 'two', 'three'],
-          };
-        },
-        methods: {
-          addGoal() {
-            this.count++;
-          },
-        },
-      }).mount('#app');
-    </script>
+    <script src="./Vue.js"></script>
   </body>
 </html>
