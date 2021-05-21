@@ -1,5 +1,12 @@
 # Can Vue.js be used inside of React?
 
+## To test this
+
+```bash
+yarn install
+yarn start
+```
+
 ## Sort of
 
 - This app uses React (packaged and bundled) and Vue 3 with the vue@next CDN
